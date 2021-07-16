@@ -1,5 +1,7 @@
 
-- import ugly parser from hell
+- write test program
+
+- roundtrip test: tokenize many SMILES then to_string
 
 - test on whole ChEMBL-28
 
