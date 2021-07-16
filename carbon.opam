@@ -1,0 +1,38 @@
+opam-version: "2.0"
+authors: "Francois Berenger"
+maintainer: "unixjunkie@sdf.org"
+homepage: "https://github.com/UnixJunkie/carbon"
+bug-reports: "https://github.com/UnixJunkie/carbon/issues"
+dev-repo: "git+https://github.com/UnixJunkie/carbon.git"
+license: "LGPL w/ linking exception"
+build: ["dune" "build" "-p" name "-j" jobs]
+depends: [
+  "batteries" {>= "3.2.0"}
+  "dolog" {>= "4.0.0"}
+  "dune" {>= "2.8"}
+  "minicli"
+  "ocaml"
+  "line_oriented"
+]
+synopsis: "Incomplete SMILES parsing library"
+description: """
+Simplified Molecular-Input Line-Entry System (SMILES)
+is a very useful chemical file format.
+
+It allows to linearly encode a molecular graph into a
+rather compact string.
+
+For a specification, cf:
+
+http://opensmiles.org/
+
+For more details, cf:
+
+https://www.daylight.com/dayhtml/doc/theory/theory.smiles.html
+https://en.wikipedia.org/wiki/Simplified_molecular-input_line-entry_system
+
+This library only implements a tokenizer for SMILES string.
+This is not a full-blown parser.
+Supporting the full standard is conditioned by me really needing it,
+or others contributing it.
+"""
