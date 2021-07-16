@@ -4,7 +4,7 @@
  (public_name carbon)
  (modules carbon utls)
  (private_modules utls)
- (libraries batteries dolog))
+ (libraries batteries dolog line_oriented))
 
 ; private executable; not installed
 (executable
