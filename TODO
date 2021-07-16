@@ -1,8 +1,6 @@
 
-- write to_string functions
+- import ugly parser from hell
 
 - test on whole ChEMBL-28
-  import in data/
 
 - test on whole ChEMBL-28 after standardization
-  import in data/
