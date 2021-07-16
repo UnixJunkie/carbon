@@ -1,0 +1,13 @@
+
+(library
+ (name carbon)
+ (public_name carbon)
+ (modules carbon utls)
+ (private_modules utls)
+ (libraries batteries dolog))
+
+; private executable; not installed
+(executable
+ (name test)
+ (modules test)
+ (libraries carbon minicli line_oriented))
