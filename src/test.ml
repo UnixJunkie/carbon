@@ -10,8 +10,8 @@ let main () =
   if argc = 1 then
     (eprintf "usage:\n  \
               %s\n  \
-              [-i <filename>]: smiles fragments input file\n  \
-              [-o <filenams>: output file\n"
+              [-i <filename>]: SMILES input file\n  \
+              [-o <filenams>: (reconstructed) SMILES output file\n"
        Sys.argv.(0);
      exit 1);
   let input_fn = CLI.get_string ["-i"] args in
