@@ -162,7 +162,8 @@ let parse_atoms_and_bonds str: smi_token list =
   loop [] str
 
 let string_of_bond = function
-  | Single    -> "-"
+  | Single    -> (* meaning there was an explicit single bond in the input;
+                    keep it explicit in the output then *) "-"
   | Double    -> "="
   | Triple    -> "#"
   | Quadruple -> "$"
