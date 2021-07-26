@@ -7,7 +7,7 @@
  (libraries batteries dolog line_oriented str))
 
 ; private executable; not installed
-(executable
- (name test model)
+(executables
+ (names test model)
  (modules test model)
  (libraries carbon minicli line_oriented))
