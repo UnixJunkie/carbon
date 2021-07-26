@@ -8,6 +8,6 @@
 
 ; private executable; not installed
 (executable
- (name test)
- (modules test)
+ (name test model)
+ (modules test model)
  (libraries carbon minicli line_oriented))
