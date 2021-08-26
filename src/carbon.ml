@@ -154,7 +154,8 @@ let parse_atoms_and_bonds str: smi_token list =
             | (None, _) ->
               begin match parse_aromatic_orga s with
                 | (Some a, rest) -> loop (Atom (Aromatic_orga a) :: acc) rest
-                | (None, _) -> failwith ("parse_atoms_and_bonds: cannot parse: " ^ s)
+                | (None, _) ->
+                  failwith ("parse_atoms_and_bonds: cannot parse: " ^ s)
               end
           end
       end
@@ -216,16 +217,19 @@ let tokenize (s: string): smi_token list =
         | Delim _ -> assert(false) (* parens_regexp would be wrong then *)
         | Text a ->
           L.map Str.(function
-              | Delim bracket_atom_str -> [[[Atom (Bracket_atom bracket_atom_str)]]]
+              | Delim bracket_atom_str ->
+                [[[Atom (Bracket_atom bracket_atom_str)]]]
               | Text b ->
                 L.map Str.(function
                     | Delim double_digit_rc ->
-                      [[Ring_open_close (parse_double_digit_ring_closure double_digit_rc)]]
+                      [[Ring_open_close
+                          (parse_double_digit_ring_closure double_digit_rc)]]
                     | Text c ->
                       L.map Str.(function
                           | Delim single_digit_rc ->
                             [Ring_open_close
-                               (parse_single_digit_ring_closure single_digit_rc)]
+                               (parse_single_digit_ring_closure
+                                  single_digit_rc)]
                           | Text atom_bonds ->
                             parse_atoms_and_bonds atom_bonds
                         )
